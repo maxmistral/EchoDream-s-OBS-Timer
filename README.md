@@ -23,3 +23,5 @@ You can also visit my website https://echodream.eu.
 7- Press start.
 
 Enjoy !
+
+[![Coverage Status](https://coveralls.io/repos/github/maxmistral/EchoDream-s-OBS-Timer/badge.svg?branch=Release-Master)](https://coveralls.io/github/maxmistral/EchoDream-s-OBS-Timer?branch=Release-Master)
