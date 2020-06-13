@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e14946496b6a4c469ae9e8fba4a18e6d)](https://www.codacy.com/manual/maxmistral.polo/EchoDream-s-OBS-Timer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=maxmistral/EchoDream-s-OBS-Timer&amp;utm_campaign=Badge_Grade)
 # EchoDream-s-OBS-Timer
 An application to display a custom timer recorded in a text file on OBS Studio.
  
@@ -23,5 +24,3 @@ You can also visit my website https://echodream.eu.
 7- Press start.
 
 Enjoy !
-
-[![Coverage Status](https://coveralls.io/repos/github/maxmistral/EchoDream-s-OBS-Timer/badge.svg?branch=Release-Master)](https://coveralls.io/github/maxmistral/EchoDream-s-OBS-Timer?branch=Release-Master)
