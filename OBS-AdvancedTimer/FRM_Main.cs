@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using YamlDotNet.RepresentationModel;
 
 namespace OBS_AdvancedTimer
 {
-    public partial class FRM_Main : Form
+    public partial class gese : Form
     {
         int seconds = 0;
         int minutes = 0;
@@ -23,7 +18,7 @@ namespace OBS_AdvancedTimer
         string endMessage = "";
         int lang = 0;
         bool timerEnded = false;
-        public FRM_Main()
+        public gese()
         {
             InitializeComponent();
             UpdateConfig();
