@@ -387,7 +387,7 @@
             this.LBL_Ver.Name = "LBL_Ver";
             this.LBL_Ver.Size = new System.Drawing.Size(71, 23);
             this.LBL_Ver.TabIndex = 153;
-            this.LBL_Ver.Text = "V1.0.0";
+            this.LBL_Ver.Text = "V1.0.2";
             this.LBL_Ver.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnStayClick_MouseDown);
             // 
             // pictureBox1
@@ -466,7 +466,7 @@
             this.TBX_EndMessage.Size = new System.Drawing.Size(448, 27);
             this.TBX_EndMessage.TabIndex = 155;
             // 
-            // gese
+            // Gese
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -501,7 +501,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "gese";
+            this.Name = "Gese";
             this.Text = "/";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FRM_Main_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnStayClick_MouseDown);
