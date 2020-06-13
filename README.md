@@ -7,6 +7,7 @@ For any question, you can contact me on my Discord Server: https://discord.gg/pQ
 You can also visit my website https://echodream.eu.
 
 **How to use**
+
 1- Select the path of the output text file that will contain the timer.
 2- Create new Text source on OBS.
 3- Select "Read from file".
