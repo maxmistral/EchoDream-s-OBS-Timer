@@ -61,6 +61,8 @@
             this.BTN_Info = new System.Windows.Forms.Button();
             this.BTN_Reduce = new System.Windows.Forms.Button();
             this.BTN_Close = new System.Windows.Forms.Button();
+            this.LBL_EndMessage = new System.Windows.Forms.Label();
+            this.TBX_EndMessage = new System.Windows.Forms.TextBox();
             this.PAN_Timer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +124,7 @@
             // 
             this.BTN_FileBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_FileBrowser.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_FileBrowser.Location = new System.Drawing.Point(806, 537);
+            this.BTN_FileBrowser.Location = new System.Drawing.Point(806, 572);
             this.BTN_FileBrowser.Name = "BTN_FileBrowser";
             this.BTN_FileBrowser.Size = new System.Drawing.Size(46, 29);
             this.BTN_FileBrowser.TabIndex = 130;
@@ -137,7 +139,7 @@
             this.TBX_FilePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBX_FilePath.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.TBX_FilePath.ForeColor = System.Drawing.Color.White;
-            this.TBX_FilePath.Location = new System.Drawing.Point(238, 541);
+            this.TBX_FilePath.Location = new System.Drawing.Point(238, 576);
             this.TBX_FilePath.Name = "TBX_FilePath";
             this.TBX_FilePath.ReadOnly = true;
             this.TBX_FilePath.Size = new System.Drawing.Size(554, 27);
@@ -260,7 +262,7 @@
             // LBL_Error
             // 
             this.LBL_Error.ForeColor = System.Drawing.Color.Brown;
-            this.LBL_Error.Location = new System.Drawing.Point(12, 569);
+            this.LBL_Error.Location = new System.Drawing.Point(12, 604);
             this.LBL_Error.Name = "LBL_Error";
             this.LBL_Error.Size = new System.Drawing.Size(1042, 59);
             this.LBL_Error.TabIndex = 140;
@@ -337,9 +339,9 @@
             this.BTN_EditFormat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_EditFormat.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_EditFormat.ForeColor = System.Drawing.Color.White;
-            this.BTN_EditFormat.Location = new System.Drawing.Point(713, 458);
+            this.BTN_EditFormat.Location = new System.Drawing.Point(713, 486);
             this.BTN_EditFormat.Name = "BTN_EditFormat";
-            this.BTN_EditFormat.Size = new System.Drawing.Size(79, 23);
+            this.BTN_EditFormat.Size = new System.Drawing.Size(79, 27);
             this.BTN_EditFormat.TabIndex = 149;
             this.BTN_EditFormat.Text = "Modify";
             this.BTN_EditFormat.UseVisualStyleBackColor = false;
@@ -356,7 +358,7 @@
             // 
             // LBL_OutputFile
             // 
-            this.LBL_OutputFile.Location = new System.Drawing.Point(387, 514);
+            this.LBL_OutputFile.Location = new System.Drawing.Point(387, 549);
             this.LBL_OutputFile.Name = "LBL_OutputFile";
             this.LBL_OutputFile.Size = new System.Drawing.Size(274, 24);
             this.LBL_OutputFile.TabIndex = 151;
@@ -368,7 +370,7 @@
             // 
             this.LBL_Dev.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_Dev.ForeColor = System.Drawing.Color.White;
-            this.LBL_Dev.Location = new System.Drawing.Point(6, 628);
+            this.LBL_Dev.Location = new System.Drawing.Point(6, 668);
             this.LBL_Dev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_Dev.Name = "LBL_Dev";
             this.LBL_Dev.Size = new System.Drawing.Size(280, 23);
@@ -380,7 +382,7 @@
             // 
             this.LBL_Ver.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_Ver.ForeColor = System.Drawing.Color.White;
-            this.LBL_Ver.Location = new System.Drawing.Point(988, 628);
+            this.LBL_Ver.Location = new System.Drawing.Point(988, 668);
             this.LBL_Ver.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LBL_Ver.Name = "LBL_Ver";
             this.LBL_Ver.Size = new System.Drawing.Size(71, 23);
@@ -443,12 +445,35 @@
             this.BTN_Close.UseVisualStyleBackColor = true;
             this.BTN_Close.Click += new System.EventHandler(this.BTN_Close_Click);
             // 
+            // LBL_EndMessage
+            // 
+            this.LBL_EndMessage.Location = new System.Drawing.Point(447, 488);
+            this.LBL_EndMessage.Name = "LBL_EndMessage";
+            this.LBL_EndMessage.Size = new System.Drawing.Size(147, 25);
+            this.LBL_EndMessage.TabIndex = 154;
+            this.LBL_EndMessage.Text = "End message :";
+            this.LBL_EndMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TBX_EndMessage
+            // 
+            this.TBX_EndMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.TBX_EndMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBX_EndMessage.Enabled = false;
+            this.TBX_EndMessage.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.TBX_EndMessage.ForeColor = System.Drawing.Color.White;
+            this.TBX_EndMessage.Location = new System.Drawing.Point(251, 516);
+            this.TBX_EndMessage.Name = "TBX_EndMessage";
+            this.TBX_EndMessage.Size = new System.Drawing.Size(448, 27);
+            this.TBX_EndMessage.TabIndex = 155;
+            // 
             // FRM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1066, 657);
+            this.ClientSize = new System.Drawing.Size(1066, 697);
+            this.Controls.Add(this.TBX_EndMessage);
+            this.Controls.Add(this.LBL_EndMessage);
             this.Controls.Add(this.LBL_Ver);
             this.Controls.Add(this.LBL_Dev);
             this.Controls.Add(this.LBL_OutputFile);
@@ -521,6 +546,8 @@
         private System.Windows.Forms.Label LBL_OutputFile;
         private System.Windows.Forms.Label LBL_Dev;
         private System.Windows.Forms.Label LBL_Ver;
+        private System.Windows.Forms.Label LBL_EndMessage;
+        internal System.Windows.Forms.TextBox TBX_EndMessage;
     }
 }
 

@@ -20,7 +20,9 @@ namespace OBS_AdvancedTimer
         string filePath = null;
         string[] fileElements;
         string timeFormat = "";
+        string endMessage = "";
         int lang = 0;
+        bool timerEnded = false;
         public FRM_Main()
         {
             InitializeComponent();
@@ -45,7 +47,22 @@ namespace OBS_AdvancedTimer
             }
             else
             {
+                timerEnded = true;
                 timer.Stop();
+                StreamWriter SW = new StreamWriter(@filePath + @"\data.txt");
+                string messageToPaste = endMessage;
+                if (!String.IsNullOrEmpty(messageToPaste))
+                {
+                    messageToPaste = messageToPaste.Replace("%h", TBX_Hour.Text);
+                    messageToPaste = messageToPaste.Replace("%m", TBX_Minutes.Text);
+                    messageToPaste = messageToPaste.Replace("%s", TBX_Seconds.Text);
+                }
+                else
+                {
+                    messageToPaste = TBX_Hour.Text + ":" + TBX_Minutes.Text + ":" + TBX_Seconds.Text;
+                }
+                SW.Write(messageToPaste);
+                SW.Close();
                 TBX_Hour.ReadOnly = false;
                 TBX_Minutes.ReadOnly = false;
                 TBX_Seconds.ReadOnly = false;
@@ -76,20 +93,23 @@ namespace OBS_AdvancedTimer
             }
             try
             {
-                StreamWriter SW = new StreamWriter(@filePath + @"\data.txt");
-                string timeToPaste = timeFormat;
-                if (!String.IsNullOrEmpty(timeFormat))
+                if(timerEnded == false)
                 {
-                    timeToPaste = timeToPaste.Replace("%h", TBX_Hour.Text);
-                    timeToPaste = timeToPaste.Replace("%m", TBX_Minutes.Text);
-                    timeToPaste = timeToPaste.Replace("%s", TBX_Seconds.Text);
+                    StreamWriter SW = new StreamWriter(@filePath + @"\data.txt");
+                    string timeToPaste = timeFormat;
+                    if (!String.IsNullOrEmpty(timeFormat))
+                    {
+                        timeToPaste = timeToPaste.Replace("%h", TBX_Hour.Text);
+                        timeToPaste = timeToPaste.Replace("%m", TBX_Minutes.Text);
+                        timeToPaste = timeToPaste.Replace("%s", TBX_Seconds.Text);
+                    }
+                    else
+                    {
+                        timeToPaste = TBX_Hour.Text + ":" + TBX_Minutes.Text + ":" + TBX_Seconds.Text;
+                    }
+                    SW.Write(timeToPaste);
+                    SW.Close();
                 }
-                else
-                {
-                    timeToPaste = TBX_Hour.Text + ":" + TBX_Minutes.Text + ":" + TBX_Seconds.Text;
-                }
-                SW.Write(timeToPaste);
-                SW.Close();
             }
             catch (Exception ex)
             {
@@ -110,6 +130,7 @@ namespace OBS_AdvancedTimer
             TBX_Minutes.ReadOnly = true;
             TBX_Seconds.ReadOnly = true;
             timer.Start();
+            timerEnded = false;
         }
 
         private void BTN_FileBrowser_Click(object sender, EventArgs e)
@@ -153,6 +174,8 @@ namespace OBS_AdvancedTimer
                     }
                     CBX_Lang.SelectedIndex = lang;
                     UpdateLangague((Lang)lang);
+                    endMessage = fileElements[3];
+                    TBX_EndMessage.Text = endMessage;
                 }
                 catch (Exception ex)
                 {
@@ -241,13 +264,16 @@ namespace OBS_AdvancedTimer
             if (!TBX_Format.Enabled)
             {
                 TBX_Format.Enabled = true;
+                TBX_EndMessage.Enabled = true;
                 BTN_EditFormat.Text = "✔";
                 BTN_EditFormat.BackColor = Color.OliveDrab;
             }
             else
             {
                 timeFormat = TBX_Format.Text;
+                endMessage = TBX_EndMessage.Text;
                 TBX_Format.Enabled = false;
+                TBX_EndMessage.Enabled = false;
                 BTN_EditFormat.BackColor = Color.Chocolate;
                 UpdateLangague((Lang)lang);
                 UpdateDataFile();
@@ -267,7 +293,7 @@ namespace OBS_AdvancedTimer
             try
             {
                 StreamWriter SW = new StreamWriter("config.ecd");
-                SW.WriteLine($"{filePath}|{timeFormat}|{CBX_Lang.SelectedIndex}");
+                SW.WriteLine($"{filePath}|{timeFormat}|{CBX_Lang.SelectedIndex}|{endMessage}");
                 SW.Close();
                 return true;
             }
