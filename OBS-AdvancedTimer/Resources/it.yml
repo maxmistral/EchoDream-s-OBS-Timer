@@ -1,0 +1,13 @@
+##################################################
+#      OBS-AdvancedTimer made by Maxmistral      #
+#                  Lang file : it                #
+#   This program is licenced under licence MIT   #
+##################################################
+
+LBL_Lang: "Langua:"
+BTN_StartTimer: "Timer di lancio"
+BTN_StopTimer: "Timer di arresto"
+BTN_ResetTimer: "Azzeramento del timer"
+BTN_EditFormat: "Modificare"
+LBL_Format: "Formato :"
+LBL_OutputFile: "Directory del file di output :"

@@ -1,0 +1,13 @@
+##################################################
+#      OBS-AdvancedTimer made by Maxmistral      #
+#                  Lang file : ch                #
+#   This program is licenced under licence MIT   #
+##################################################
+
+LBL_Lang: "语言:"
+BTN_StartTimer: "启动计时器"
+BTN_StopTimer: "停止计时器"
+BTN_ResetTimer: "重置计时器"
+BTN_EditFormat: "编辑"
+LBL_Format: "格式："
+LBL_OutputFile: "输出文件目录："
