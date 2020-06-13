@@ -7,18 +7,18 @@ using YamlDotNet.RepresentationModel;
 
 namespace OBS_AdvancedTimer
 {
-    public partial class gese : Form
+    public partial class Gese : Form
     {
-        int seconds = 0;
-        int minutes = 0;
-        int hours = 0;
-        string filePath = null;
+        int seconds;
+        int minutes;
+        int hours;
+        string filePath;
         string[] fileElements;
         string timeFormat = "";
         string endMessage = "";
-        int lang = 0;
-        bool timerEnded = false;
-        public gese()
+        int lang;
+        bool timerEnded;
+        public Gese()
         {
             InitializeComponent();
             UpdateConfig();
@@ -176,9 +176,9 @@ namespace OBS_AdvancedTimer
                 {
                     LBL_Error.Text = ex.Message;
                 }
-
             }
         }
+
         private void UpdateLangague(Lang language)
         {
             string lang = language.ToString();
@@ -197,9 +197,9 @@ namespace OBS_AdvancedTimer
                     this.Controls.Find(((YamlScalarNode)entry.Key).Value, false).ElementAt(0).Text = ((YamlScalarNode)entry.Value).Value;
                     AutoSize(this.Controls.Find(((YamlScalarNode)entry.Key).Value, false).ElementAt(0));
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    LBL_Error.Text = ex.Message;
                 }
 
             }
@@ -216,9 +216,15 @@ namespace OBS_AdvancedTimer
         }
 
         //=============================== Move Windows ===================================
+        public static int WM_NCLBUTTONDOWN
+        {
+            get { return 0xA1; }
+        }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
+        public static int HT_CAPTION
+        {
+            get { return 0x2; }
+        }
 
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -283,19 +289,17 @@ namespace OBS_AdvancedTimer
             TBX_Seconds.ReadOnly = false;
         }
 
-        private bool UpdateDataFile()
+        private void UpdateDataFile()
         {
             try
             {
                 StreamWriter SW = new StreamWriter("config.ecd");
                 SW.WriteLine($"{filePath}|{timeFormat}|{CBX_Lang.SelectedIndex}|{endMessage}");
                 SW.Close();
-                return true;
             }
             catch (Exception ex)
             {
                 LBL_Error.Text = ex.Message;
-                return false;
             }
         }
 
@@ -342,7 +346,6 @@ namespace OBS_AdvancedTimer
             DialogResult dialogResult = MessageBox.Show("Are you sure to want to quit this application? Otherwise, this application will be reduced.", "Do you want to quit?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                GC.Collect();
                 Application.Exit();
             }
             else if (dialogResult == DialogResult.No)
@@ -350,7 +353,6 @@ namespace OBS_AdvancedTimer
                 Hide();
                 notifIcon.Visible = true;
                 notifIcon.ShowBalloonTip(1000);
-                GC.Collect();
             }
         }
 

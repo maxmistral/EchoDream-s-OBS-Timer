@@ -1,6 +1,6 @@
 ﻿namespace OBS_AdvancedTimer
 {
-    partial class gese
+    partial class Gese
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gese));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gese));
             this.BTN_ResetTimer = new System.Windows.Forms.Button();
             this.BTN_StopTimer = new System.Windows.Forms.Button();
             this.BTN_StartTimer = new System.Windows.Forms.Button();

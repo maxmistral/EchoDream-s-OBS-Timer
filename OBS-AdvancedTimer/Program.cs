@@ -16,7 +16,7 @@ namespace OBS_AdvancedTimer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gese());
+            Application.Run(new Gese());
         }
     }
 }
